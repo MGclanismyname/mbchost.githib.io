@@ -380,18 +380,76 @@ Premium Minecraft Server Hosting
 <option>Fabric</option>
 </select>
 
-<label>Minecraft Version</label> <select name="version">
+<label>Minecraft Version</label>
+<select name="version" required>
 
-<option>Latest</option>
+<option selected>Latest</option>
+
 <option>1.21.4</option>
+<option>1.21.3</option>
+<option>1.21.2</option>
+<option>1.21.1</option>
+<option>1.21</option>
+
+<option>1.20.6</option>
+<option>1.20.5</option>
 <option>1.20.4</option>
+<option>1.20.3</option>
+<option>1.20.2</option>
 <option>1.20.1</option>
+<option>1.20</option>
+
 <option>1.19.4</option>
+<option>1.19.3</option>
+<option>1.19.2</option>
+<option>1.19.1</option>
+<option>1.19</option>
+
 <option>1.18.2</option>
+<option>1.18.1</option>
+<option>1.18</option>
+
 <option>1.17.1</option>
+<option>1.17</option>
+
 <option>1.16.5</option>
+<option>1.16.4</option>
+<option>1.16.3</option>
+<option>1.16.2</option>
+<option>1.16.1</option>
+<option>1.16</option>
+
+<option>1.15.2</option>
+<option>1.15.1</option>
+<option>1.15</option>
+
+<option>1.14.4</option>
+<option>1.14.3</option>
+<option>1.14.2</option>
+<option>1.14.1</option>
+<option>1.14</option>
+
+<option>1.13.2</option>
+<option>1.13.1</option>
+<option>1.13</option>
+
 <option>1.12.2</option>
+<option>1.11.2</option>
+<option>1.10.2</option>
+<option>1.9.4</option>
+
 <option>1.8.9</option>
+<option>1.8.8</option>
+<option>1.8.7</option>
+<option>1.8.6</option>
+<option>1.8.5</option>
+<option>1.8.4</option>
+<option>1.8.3</option>
+<option>1.8.2</option>
+<option>1.8.1</option>
+<option>1.8</option>
+
+</select>
 </select>
 
 <label>Server Name</label> <input type="text" name="servername" required>
@@ -421,21 +479,23 @@ e.preventDefault();
 
 const data = new FormData(this);
 
-await fetch("https://script.google.com/macros/s/AKfycbxV-wxKqwvtITTUagEBgbMNnYqZXr9ju3EYQ6d0B34DT-igKFlKs3KTZ-JKXPjQVY3ALQ/exec",{
+try{
+
+await fetch("https://script.google.com/macros/s/AKfycbwXa9p4Fstw2Bd7VlgRW3MTJCy3N5jFI3hpV740yZ5OzgEzpq2vBdpdrTunK9iw0rM1uw/exec",{
 method:"POST",
 body:data
 });
 
 window.location="success.html";
 
-});
-.catch(() => {
+}catch(err){
+
 alert("Order submitted but connection check failed.");
-});
+
+}
 
 });
 
 </script>
-
 </body>
 </html>
