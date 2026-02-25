@@ -469,6 +469,12 @@ if(params.get("paid") === "true"){
 document.getElementById("orderModal").style.display="flex";
 }
 
+const plan = params.get("plan");
+
+if(plan){
+document.getElementById("planInput").value = plan;
+}
+
 function closeOrder(){
 document.getElementById("orderModal").style.display="none";
 }
