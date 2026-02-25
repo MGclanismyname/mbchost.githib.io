@@ -509,19 +509,30 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
 
 e.preventDefault();
 
-const data = new FormData(this);
+const form = document.getElementById("orderForm");
 
-fetch("https://script.google.com/macros/s/AKfycbwXa9p4Fstw2Bd7VlgRW3MTJCy3N5jFI3hpV740yZ5OzgEzpq2vBdpdrTunK9iw0rM1uw/exec",{
-method:"POST",
-mode:"no-cors",
-body:data
+const data = new URLSearchParams();
+
+data.append("plan", document.getElementById("planInput").value);
+data.append("firstname", form.firstname.value);
+data.append("lastname", form.lastname.value);
+data.append("email", form.email.value);
+data.append("type", form.type.value);
+data.append("version", form.version.value);
+data.append("servername", form.servername.value);
+
+fetch("https://script.google.com/macros/s/AKfycbwXa9p4Fstw2Bd7VlgRW3MTJCy3N5jFI3hpV740yZ5OzgEzpq2vBdpdrTunK9iw0rM1uw/exec", {
+method: "POST",
+mode: "no-cors",
+headers: {
+"Content-Type": "application/x-www-form-urlencoded"
+},
+body: data
 });
 
-/* give Google time to receive it */
-
-setTimeout(function(){
-window.location="success.html";
-},1500);
+setTimeout(() => {
+window.location = "success.html";
+}, 1200);
 
 });
 </script>
