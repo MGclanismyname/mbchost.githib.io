@@ -368,15 +368,17 @@ Premium Minecraft Server Hosting
 
 <input type="hidden" id="planInput" name="plan">
 
-<label>Email</label> <input type="email" name="email" required>
-
 <label>First Name</label>
 <input type="text" name="firstname" required>
 
 <label>Last Name</label>
 <input type="text" name="lastname" required>
-  
-<label>Server Type</label> <select name="type">
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Server Type</label>
+<select name="type" required>
 
 <option>Paper</option>
 <option>Vanilla</option>
@@ -384,6 +386,7 @@ Premium Minecraft Server Hosting
 <option>Bungeecord</option>
 <option>Forge</option>
 <option>Fabric</option>
+
 </select>
 
 <label>Minecraft Version</label>
@@ -391,6 +394,13 @@ Premium Minecraft Server Hosting
 
 <option selected>Latest</option>
 
+<option>1.21.11</option>  
+<option>1.21.10</option>
+<option>1.21.9</option>
+<option>1.21.8</option>  
+<option>1.21.7</option>  
+<option>1.21.6</option>
+<option>1.21.5</option>
 <option>1.21.4</option>
 <option>1.21.3</option>
 <option>1.21.2</option>
@@ -457,7 +467,8 @@ Premium Minecraft Server Hosting
 
 </select>
 
-<label>Server Name</label> <input type="text" name="servername" required>
+<label>Server Name</label>
+<input type="text" name="servername" required>
 
 <button type="submit">Submit Setup</button>
 
