@@ -505,19 +505,26 @@ document.getElementById("orderModal").style.display="none";
 
 /* FORM SUBMIT */
 
-document.getElementById("orderForm").addEventListener("submit", function(e){
+document.getElementById("orderForm").addEventListener("submit", async function(e){
 
 e.preventDefault();
 
 const data = new FormData(this);
 
-fetch("https://script.google.com/macros/s/AKfycbwXa9p4Fstw2Bd7VlgRW3MTJCy3N5jFI3hpV740yZ5OzgEzpq2vBdpdrTunK9iw0rM1uw/exec",{
+try {
+
+await fetch("https://script.google.com/macros/s/AKfycbwXa9p4Fstw2Bd7VlgRW3MTJCy3N5jFI3hpV740yZ5OzgEzpq2vBdpdrTunK9iw0rM1uw/exec",{
 method:"POST",
-mode:"no-cors",
 body:data
 });
 
 window.location="success.html";
+
+} catch(err) {
+
+alert("Submission failed. Please try again.");
+
+}
 
 });
 
