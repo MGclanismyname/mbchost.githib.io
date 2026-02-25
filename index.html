@@ -479,22 +479,21 @@ function closeOrder(){
 document.getElementById("orderModal").style.display="none";
 }
 
-document.getElementById("orderForm").addEventListener("submit", async function(e){
+document.getElementById("orderForm").addEventListener("submit", function(e){
 
 e.preventDefault();
 
 const data = new FormData(this);
 
-try{
-
-await fetch("https://script.google.com/macros/s/AKfycbxV-wxKqwvtITTUagEBgbMNnYqZXr9ju3EYQ6d0B34DT-igKFlKs3KTZ-JKXPjQVY3ALQ/exec",{
+fetch("https://script.google.com/macros/s/AKfycbwXa9p4Fstw2Bd7VlgRW3MTJCy3N5jFI3hpV740yZ5OzgEzpq2vBdpdrTunK9iw0rM1uw/exec",{
 method:"POST",
+mode:"no-cors",
 body:data
 });
 
 window.location="success.html";
 
-}catch(err){
+});
 
 alert("Order submitted but connection check failed.");
 
