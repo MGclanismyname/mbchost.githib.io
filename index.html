@@ -368,6 +368,12 @@ Premium Minecraft Server Hosting
 
 <input type="hidden" id="planInput" name="plan">
 
+<label>First Name</label>
+<input type="text" name="firstname" required>
+
+<label>Last Name</label>
+<input type="text" name="lastname" required>
+
 <label>Email</label>
 <input type="email" name="email" required>
 
@@ -388,11 +394,11 @@ Premium Minecraft Server Hosting
 
 <option selected>Latest</option>
 
-<option>1.21.11</option>  
+<option>1.21.11</option>
 <option>1.21.10</option>
 <option>1.21.9</option>
-<option>1.21.8</option>  
-<option>1.21.7</option>  
+<option>1.21.8</option>
+<option>1.21.7</option>
 <option>1.21.6</option>
 <option>1.21.5</option>
 <option>1.21.4</option>
@@ -473,6 +479,8 @@ Premium Minecraft Server Hosting
 
 <script>
 
+/* OPEN MODAL AFTER PAYMENT */
+
 window.addEventListener("load", function(){
 
 const params = new URLSearchParams(window.location.search);
@@ -487,9 +495,15 @@ if(plan){
 document.getElementById("planInput").value = plan;
 }
 
+});
+
+/* CLOSE MODAL */
+
 function closeOrder(){
 document.getElementById("orderModal").style.display="none";
 }
+
+/* FORM SUBMIT */
 
 document.getElementById("orderForm").addEventListener("submit", function(e){
 
@@ -507,11 +521,7 @@ window.location="success.html";
 
 });
 
-alert("Order submitted but connection check failed.");
-
-}
-
-});
+</script>
 
 </script>
 </body>
