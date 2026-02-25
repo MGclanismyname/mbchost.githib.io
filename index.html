@@ -415,19 +415,20 @@ function closeOrder(){
 document.getElementById("orderModal").style.display="none";
 }
 
-document.getElementById("orderForm").addEventListener("submit", function(e){
+document.getElementById("orderForm").addEventListener("submit", async function(e){
 
 e.preventDefault();
 
 const data = new FormData(this);
 
-fetch("https://script.google.com/macros/s/AKfycbwXa9p4Fstw2Bd7VlgRW3MTJCy3N5jFI3hpV740yZ5OzgEzpq2vBdpdrTunK9iw0rM1uw/exec",{
+await fetch("https://script.google.com/macros/s/AKfycbwXa9p4Fstw2Bd7VlgRW3MTJCy3N5jFI3hpV740yZ5OzgEzpq2vBdpdrTunK9iw0rM1uw/exec",{
 method:"POST",
 body:data
-})
-.then(() => {
+});
+
 window.location="success.html";
-})
+
+});
 .catch(() => {
 alert("Order submitted but connection check failed.");
 });
